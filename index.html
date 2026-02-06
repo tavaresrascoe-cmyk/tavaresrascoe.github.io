@@ -10,6 +10,7 @@
     <!-- Open Graph for social sharing -->
     <meta property="og:title" content="Tavares Rascoe | Quality & Food Safety Professional">
     <meta property="og:description" content="Quality Product Specialist focused on systems-level quality, food safety, and risk control in manufacturing.">
+    <meta property="og:image" content="https://tavaresrascoe.com/tavares-profile.jpg">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://tavaresrascoe.com">
     
@@ -102,6 +103,64 @@
             margin-bottom: 0;
         }
         
+        /* About section with image */
+        .about-content {
+            display: flex;
+            gap: 32px;
+            align-items: flex-start;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            width: 200px;
+            flex-shrink: 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 600px) {
+            .about-content {
+                flex-direction: column-reverse;
+            }
+            
+            .about-image {
+                width: 100%;
+                max-width: 280px;
+                margin: 0 auto;
+            }
+        }
+        
+        /* Photo gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 24px;
+        }
+        
+        .gallery img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .gallery img:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+        
+        @media (max-width: 600px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
         /* What I Do Grid */
         .skills {
             display: grid;
@@ -174,9 +233,14 @@
         
         <section>
             <h2>About</h2>
-            <p>I was born in East Baltimore and came up through foster care. A bus ride downtown changed my life when I enrolled in Job Corps, which led to a high school diploma and a degree in chemistry. I became the first in my family to graduate college.</p>
-            <p>Today, I work in food safety and quality assurance at Ferrero. My focus is on identifying failure modes, closing quality gaps, and building systems that prevent problems before they happen. I hold a PCQI certification and have worked across pharmaceutical, chemical, and food manufacturing environments.</p>
-            <p>I also write about Black American identity, consciousness, and fatherhood on Medium.</p>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I was born in East Baltimore and came up through foster care. A bus ride downtown changed my life when I enrolled in Job Corps, which led to a high school diploma and a degree in chemistry. I became the first in my family to graduate college.</p>
+                    <p>Today, I work in food safety and quality assurance at Ferrero. My focus is on identifying failure modes, closing quality gaps, and building systems that prevent problems before they happen. I hold a PCQI certification and have worked across pharmaceutical, chemical, and food manufacturing environments.</p>
+                    <p>I also write about Black American identity, consciousness, and fatherhood on Medium.</p>
+                </div>
+                <img src="about-portrait.jpg" alt="Tavares Rascoe portrait" class="about-image">
+            </div>
         </section>
         
         <section>
@@ -198,6 +262,15 @@
                     <h3>Audit Discipline</h3>
                     <p>Strengthening audit effectiveness, documentation standards, and long-term operational integrity.</p>
                 </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Life & Work</h2>
+            <div class="gallery">
+                <img src="work.png" alt="Tavares Rascoe at work in manufacturing">
+                <img src="graduation.jpg" alt="Tavares Rascoe at graduation celebration">
+                <img src="family.jpg" alt="Tavares Rascoe with family">
             </div>
         </section>
         

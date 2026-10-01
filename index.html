@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tavares Rascoe | Food Safety & Quality Assurance Professional</title>
     <meta name="description" content="FSQA professional with a Chemistry background. Expertise in Foreign Body Audit programs, Product Hold management, Environmental Monitoring, and Quality Systems.">
+    <link rel="canonical" href="https://tavaresrascoe.com/">
     <meta name="author" content="Tavares Rascoe">
     
     <!-- Open Graph for social sharing -->
@@ -12,7 +13,7 @@
     <meta property="og:description" content="FSQA professional with a Chemistry background. Managing Foreign Body Audits, Product Holds, Environmental Monitoring, and Quality Systems.">
     <meta property="og:image" content="https://tavaresrascoe.com/tavares-profile.jpg">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://tavaresrascoe.com">
+    <meta property="og:url" content="https://tavaresrascoe.com/">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -224,7 +225,6 @@
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
         }
         
         .gallery-item:hover {
@@ -369,7 +369,7 @@
         footer {
             padding: 48px 0;
             text-align: center;
-            color: #888;
+            color: #666;
             font-size: 0.875rem;
             background: #fafafa;
             border-top: 1px solid #f0f0f0;
@@ -409,9 +409,43 @@
             transform: translateY(-4px);
             box-shadow: 0 8px 24px rgba(26,95,122,0.4);
         }
+
+        /* Keyboard access and touch-friendly photo captions. */
+        a:focus-visible, button:focus-visible {
+            outline: 3px solid #1a5f7a;
+            outline-offset: 4px;
+        }
+        .skip-link {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            padding: 12px 20px;
+            background: #fff;
+            color: #1a5f7a;
+            transform: translateY(-200%);
+            z-index: 200;
+        }
+        .skip-link:focus { transform: translateY(0); }
+        .gallery-item img { display: block; }
+        .skill h3::before { flex-shrink: 0; }
+        @media (hover: none), (pointer: coarse) {
+            .gallery-caption { opacity: 1; transform: none; }
+        }
+        @media (max-width: 600px) {
+            header { padding: 64px 0 48px; }
+            section { padding: 48px 0; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
     </style>
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <header>
         <div class="container">
             <img src="tavares-profile.jpg" alt="Tavares Rascoe" class="profile-photo fade-in">
@@ -421,7 +455,7 @@
         </div>
     </header>
     
-    <main>
+    <main id="main-content" tabindex="-1">
         <div class="container">
             <section>
                 <h2>About</h2>
@@ -503,7 +537,7 @@
         </div>
     </footer>
     
-    <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
+    <button type="button" class="scroll-top" aria-label="Back to top" onclick="window.scrollTo({top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});">↑</button>
     
     <script>
         // Scroll to top button visibility

@@ -271,36 +271,12 @@
             }
         }
         
-        /* Preserve the complete family photographs, including every person. */
-        .family-gallery {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+        /* Keep faces visible in the existing square gallery tiles. */
+        .gallery-item img[src="uniform-portrait-light-corrected.jpg"] {
+            object-position: center 35%;
         }
-        .family-gallery .gallery-item {
-            margin: 0;
-            background: #f3f6f6;
-        }
-        .family-gallery .gallery-item img {
-            height: auto;
-            aspect-ratio: 9 / 16;
-            object-fit: contain;
-        }
-        .family-gallery .gallery-item:hover img {
-            transform: none;
-        }
-        .family-gallery figcaption {
-            padding: 16px 20px;
-            background: #fff;
-            color: #444;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-        .family-gallery-title {
-            margin-top: 40px;
-            font-family: 'Inter', sans-serif;
-        }
-        @media (max-width: 600px) {
-            .family-gallery { grid-template-columns: 1fr; }
+        .gallery-item img[src="family-graduation-light-corrected.jpg"] {
+            object-position: center 70%;
         }
 
         /* What I Do Grid - Card Style */
@@ -546,17 +522,14 @@
                         <img src="family.jpg" alt="Tavares Rascoe with family">
                         <div class="gallery-caption">Family</div>
                     </div>
-                </div>
-                <h3 class="family-gallery-title">Family moments</h3>
-                <div class="gallery family-gallery">
-                    <figure class="gallery-item">
-                        <img src="uniform-portrait-light-corrected.jpg" alt="Family portrait in uniform" width="1290" height="1429" loading="lazy">
-                        <figcaption>A family portrait</figcaption>
-                    </figure>
-                    <figure class="gallery-item">
-                        <img src="family-graduation-light-corrected.jpg" alt="Family gathered together at a graduation celebration" width="1152" height="2048" loading="lazy">
-                        <figcaption>Celebrating together</figcaption>
-                    </figure>
+                    <div class="gallery-item">
+                        <img src="uniform-portrait-light-corrected.jpg" alt="Family portrait in uniform" loading="lazy">
+                        <div class="gallery-caption">A Family Portrait</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="family-graduation-light-corrected.jpg" alt="Family gathered together at a graduation celebration" loading="lazy">
+                        <div class="gallery-caption">Celebrating Together</div>
+                    </div>
                 </div>
             </section>
             
